@@ -4,7 +4,7 @@ const TodoData = require("../model/Data");
 const All_Data  = async(req, res) =>{
     try{
         const AllData = await TodoData.find();     //find - method of mongodb which finds all listing
-        res.join(AllData);
+        res.json(AllData);
         }
         catch(error){
         res.json({message : error});
@@ -26,7 +26,6 @@ const create_Data  =async(req, res) =>{
     const todo = new TodoData({
         task: req.body.task,
         iscomplete: req.body.iscomplete,
-        timestamp: req.body.timestamp,
        
       });
     
@@ -45,8 +44,7 @@ const Update_Data  =async(req, res) =>{
         const todo = {
           task: req.body.task,
           iscomplete: req.body.iscomplete,
-          timestamp: req.body.timestamp,
-         
+    
         };
     
         const updatedTodo = await TodoData.findByIdAndUpdate(
