@@ -4,6 +4,8 @@ import { Todos } from "./components/Todos";
 import {useDispatch, useSelector} from 'react-redux';
 import {deleteAll} from './redux/todoapp/actions';
 import {useState} from 'react';
+import { Button} from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 function App() {
   // dispatch function to dispatch an action
   const dispatch = useDispatch();
@@ -36,8 +38,9 @@ function App() {
     cancelUpdate={cancelUpdate}/>
     <Todos handleEditClick={handleEditClick} editFormVisibility={editFormVisibility}/>
     {todos.length > 1 && (
-      <button className='btn btn-danger btn-md delete-all'
-      onClick={()=>dispatch(deleteAll())}>DELETE ALL</button>
+      <Button 
+      variant="contained" endIcon={<DeleteIcon/>}
+      onClick={()=>dispatch(deleteAll())}>DELETE ALL</Button>
     )}
   </div>
   )

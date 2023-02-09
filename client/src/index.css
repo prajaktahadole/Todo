@@ -1,3 +1,8 @@
+body{
+  background-image: url('https://i.pinimg.com/originals/0d/3a/f9/0d3af9565b6db10f1d9c7a276dfd9d57.jpg');
+  background-size: cover;
+}
+
 
 *{
   margin: 0;
@@ -39,8 +44,8 @@
   display: flex;
 }
 
-.todo-box .content p{
-  padding: 15px;
+.todo-box .content h3{
+  padding: 10px;
   margin-left: 6px;
 }
 
